@@ -1,9 +1,8 @@
 package com.transport.company.train.model;
 
-import java.beans.Transient;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Zone implements Serializable {
 	
@@ -15,31 +14,21 @@ public class Zone implements Serializable {
 	
 	private static final long serialVersionUID = -5201619994190856627L;
 	
-	
-	
 	public final static Zone ZONE_1 = new Zone(); 
 	public final static Zone ZONE_2 = new Zone(); 
 	public final static Zone ZONE_3 = new Zone(); 
 	public final static Zone ZONE_4 = new Zone(); 
 	
-	private String name;
+	private int order;
 	
 	//@Transient
-	private List<Station> stations = new ArrayList<Station>();
+	private Set<Station> stations = new HashSet<Station>();
 
-	public String getName() {
-		return name;
+	public int getOrder() {
+		return this.order;
 	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public List<Station> getStations() {
+	public Set<Station> getStations() {
 		return stations;
 	}
-	
-	
-	
-
 }
